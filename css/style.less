@@ -1,0 +1,556 @@
+
+/*========  ====    Основные прaвила     ===========*/
+@black : #000;
+@main_color : #97b768;
+@sections_white : #f5f9f7;
+@bg_hover :  #4c9c6d;
+@btn_hover : #034627;
+
+body {
+	font-size: 14pt;
+	color : @black;
+	a{
+		&:hover,
+		&:focus,
+		&:visited,
+		&:active{
+			text-decoration: none;
+			color: @black
+		} 
+	}
+	p{
+		text-indent: 20px;
+	}
+	.container{
+	padding: 0 150px
+	}
+}
+
+
+/*============    header   ===========*/
+header {
+	padding-top: 30px;
+	text-align: center;
+	.container {
+		background-color: @main_color;
+		.row{
+			span{
+				padding-right: 60px;
+			}
+			h4 {
+				margin-bottom: 0;
+			}
+			#logo_header{
+				text-align: left;
+				padding-top: 5px;
+			}	
+			h2{
+				margin-top: 20px;
+				margin-right: 200px;
+			}
+			p {
+				padding-right: 120px;
+				margin-bottom: 35px;
+			}
+			.main_logo {
+				margin-top: 40px;
+				padding-left: 50px;
+			}
+		}
+		#header_nav{
+			padding-top: 30px;
+			nav {
+				ul{
+					a{
+						display: inline-block;
+						padding: 15px 25px;
+						&:hover {
+							background-color:@bg_hover;
+						}
+					}
+				}
+			}	
+		}	
+	}
+}
+
+
+#triangle_header{
+	background-color: white;
+	padding: 0;
+}
+.triangle {
+	color: @black;
+	text-align: center;
+	overflow: hidden;
+	position: relative;
+	padding-bottom: 50px;
+
+	&:after {
+		position: absolute;
+		left: 0;
+		content: "";
+		width: 100%;
+		height: 50px;
+		background-position: top left, top right;
+		background-repeat: no-repeat;
+		background-size: 50.1% 100%;
+	}
+}
+.triangle:after{
+	background-image: linear-gradient(to top right, transparent 48%, #c3deef 2%,  #97b768 50%),
+	linear-gradient(to top left, transparent 48%, #c3deef 2%,  #97b768 50%);
+}
+
+/*============    Section 1    ===========*/
+
+#sect1{
+	div.container{
+		background-color: @sections_white;
+		text-align: center;
+		padding-top: 35px;	
+		h2{
+			margin-bottom: 40px;
+		}
+	}	
+}
+
+#sect2{
+	.container{
+		background-color: @sections_white;
+		text-align: center;
+		margin-top: 35px;	
+		height: 265px;
+		padding:0;
+	}
+
+	.parent{
+		display: table;
+		margin-top: 0;
+	}
+
+	.child{
+		display: table-cell;
+		vertical-align: middle;
+		text-align:center;
+	}
+	.img-responsive{
+		display: inline-block;
+	}
+
+	.button{
+		padding-top: 15px;
+		button{
+			background-color: #347a51;
+			width: 174px;
+			height: 60px;
+			border: 0;
+			&:hover{
+				border: 2px solid;
+				border-color: @btn_hover;
+			}
+			h2{
+				margin-top: 10px;
+			}
+		}
+	}		
+}
+
+
+/*============    footer    ===========*/
+footer{
+	text-align: center;
+	padding-bottom: 30px;
+	#triangle_footer{
+		background-color: white;
+		padding: 0;
+	}
+	.triangle:after{
+		background-image: linear-gradient(to bottom right, transparent 48%, #c3deef 2%, @main_color 50%),
+		linear-gradient(to bottom left, transparent 48%, #c3deef 2%,  @main_color 50%);
+	}
+	.container {
+		background-color: @main_color;
+		padding-top: 40px;
+		ul.list-inline a{
+			display: inline-block;
+			margin: 0 20px;
+		}
+	}
+	.fa-stack{
+		position: relative;
+		display: inline-block;
+		width: 50px;
+		height: 50px;
+		line-height: 50px;
+		vertical-align: middle;
+	}
+
+	.fa-stack-2x{
+		font-size: 50px;
+	}
+	.fa-stack-1x{
+		font-size: 24px;;
+	}
+	div.row.copyright{
+		margin-top: 40px;
+	}
+}
+
+
+
+
+/*============    	АДАПТИВ    ===========*/
+.dropdown-toggle{
+	font-size: 20pt;
+	border: 1px solid;
+	padding:6px 12px;
+	border-radius: 10px;
+	&:hover{
+		border-color: @btn_hover;
+		background-color: @bg_hover;
+		color: white;
+	}
+}
+ul.dropdown-menu{
+	min-width: 125px;
+	margin-left: 13px;
+}
+
+@media(min-width:0px) and (max-width:320px) {
+	body{
+		.container{
+			padding: 0 10px;
+			.row{
+				h4{
+					font-size: 8pt;
+					text-align: right;
+				}
+				h2{
+					font-size: 18pt;
+					margin-right: 5px;
+					padding: 0 5px
+				}
+				p{
+					font-size: 12pt;
+					padding:0 20px;
+				}
+			}
+			div.triangle{
+				&:after{
+					height: 30px;
+				}
+			}
+		}
+	}
+	#sect1 div.container {
+		padding-top: 20px;
+		padding-bottom: 10px;
+		h2{
+			margin-bottom: 20px;
+
+		}
+	}
+	
+	#sect2 {
+		.parent{
+			margin-top: 20px;
+		}
+		.button button{
+			width: 100px;
+			height: 50px;
+			padding: 0;
+			&:hover{
+				border: 2px  solid;
+				border-color:@btn_hover ;
+				font-size: 14pt;
+			}
+			h2{
+				font-size: 14pt;
+				margin: 0;
+			}
+		}
+	}
+	footer{
+		div.triangle{
+			&:after{
+				height: 30px;
+			}
+			padding-bottom: 30px;
+			margin-top: 10px;
+		}
+		.row{
+			font-size: 12pt;
+			ul.list-inline{
+				li{
+					a{
+						margin: 10px 0px;
+						font-size: 10pt
+					}
+					padding: 0 3px;
+				}
+			}
+		}
+		div.row.copyright{
+			margin-top: 10px;
+		}
+		.fa-stack{
+			    width: 25px;
+    height: 25px;
+    line-height: 25px;
+		}
+		 .fa-stack-1x{
+		 	font-size: 12px
+		 }
+		 .fa-stack-2x{
+		 	font-size: 25px
+		 }
+	}
+}
+
+@media(min-width:321px) and (max-width:480px) {
+	body{
+		.container{
+			padding: 0 10px;
+			.row{
+				h4{
+					font-size: 10pt;
+					text-align: right;
+				}
+				h2{
+					font-size: 18pt;
+					margin-right: 5px;
+				}
+				p{
+					font-size: 12pt;
+					padding:0 20px;
+				}
+			}
+			div.triangle{
+				&:after{
+					height: 30px;
+				}
+			}
+		}
+	}
+	#sect1 div.container {
+		padding-top: 20px;
+		padding-bottom: 10px;
+		h2{
+			margin-bottom: 20px;
+		}
+	}
+	
+	#sect2 {
+		.parent{
+			margin-top: 20px;
+		}
+		.button button{
+			width: 100px;
+			height: 50px;
+			&:hover{
+				border: 2px  solid;
+				border-color:@btn_hover ;
+			}
+			h2{
+				font-size: 14pt;
+				margin: 0;
+			}
+		}
+	}
+	footer{
+		div.triangle{
+			&:after{
+				height: 30px;
+			}
+			padding-bottom: 30px;
+			margin-top: 10px;
+		}
+		.row{
+			font-size: 12pt;
+			ul.list-inline{
+				li{
+					a{
+						margin: 10px 0px;
+					}
+				}
+			}
+		}
+		div.row.copyright{
+			margin-top: 10px;
+		}
+		.fa-stack{
+			width: 28px;
+			height: 28px;
+			line-height: 28px;
+		}
+		.fa-stack-1x{
+			font-size: 14px
+		}
+		.fa-stack-2x{
+			font-size: 28px
+		}
+	}
+}
+
+@media(min-width:481px) and (max-width:768px) {
+	body{
+		.container{
+			padding: 0 10px;
+			.row{
+				h4{
+					font-size: 12pt;
+					text-align: right;
+				}
+				h2{
+					font-size: 22pt;
+					margin-right: 0;
+				}
+				p{
+					font-size: 14pt;
+					padding:0 20px;
+				}
+			}
+			div.triangle{
+				&:after{
+					height: 30px;
+				}
+			}
+		}
+	}
+	#sect1 div.container {
+		padding-top: 20px;
+		padding-bottom: 10px;
+		h2{
+			margin-bottom: 20px;
+		}
+	}
+	
+	#sect2 {
+		.parent{
+			margin-top: 20px;
+		}
+		.button button{
+			width: 100px;
+			height: 50px;
+			&:hover{
+				border: 2px  solid;
+				border-color:@btn_hover ;
+			}
+			h2{
+				font-size: 14pt;
+				margin: 0;
+			}
+		}
+	}
+	footer{
+		div.triangle{
+			&:after{
+				height: 30px;
+			}
+			padding-bottom: 30px;
+			margin-top: 10px;
+		}
+		.row{
+			font-size: 12pt;
+			ul.list-inline{
+				li{
+					a{
+						margin: 10px;
+					}
+				}
+			}
+		}
+		div.row.copyright{
+			margin-top: 10px;
+		}
+		.fa-stack{
+			width: 32px;
+			height: 32px;
+			line-height: 32px;
+		}
+		.fa-stack-1x{
+			font-size: 16px
+		}
+		.fa-stack-2x{
+			font-size: 32px
+		}
+	}
+}
+
+@media(min-width:769px) and (max-width:992px) {
+	header {
+		padding-top: 30px;
+		text-align: center;
+		.container {
+			padding: 0 30px; 
+			.row{
+				span{
+					padding-right: 60px;
+				}
+				
+				#logo_header{
+					text-align: left;
+					padding-top: 5px;
+				}	
+				h2{
+					margin-top: 15px;
+					margin-right: 0px;
+				}
+				p {
+					padding-right: 120px;
+					margin-bottom: 35px;
+				}
+				.main_logo {
+					margin-top: 40px;
+					padding-left: 50px;
+				}
+			}
+			#header_nav{
+				padding-top: 30px;
+				nav {
+					ul{
+						a{
+							display: inline-block;
+							padding: 15px 25px;
+							&:hover {
+								background-color:@bg_hover;
+							}
+						}
+					}
+				}	
+			}	
+		}
+	}
+	#sect1{
+		div.container{
+			padding: 0 30px;
+			padding-top: 20px;
+			h2{
+				margin-bottom: 20px;
+			}
+			p{
+				font-size: 12pt
+			}
+		}	
+	}
+
+	footer{
+		.container {
+			background-color: @main_color;
+			padding-top: 30px;
+			ul.list-inline a{
+				display: inline-block;
+				margin: 0 5px;
+			}
+		}
+
+	}
+}
+
+@media(min-width:993px) and (max-width:1200px) {
+	
+}
+
+
+
